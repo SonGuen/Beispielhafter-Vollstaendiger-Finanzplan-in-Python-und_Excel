@@ -275,3 +275,294 @@ plt.title("Mittlere Jahressumme der Globalstrahlung"+"\n"+"in Deutschland zwisch
 plt.show()
 
 ########################################################Grafische Darlegung der Deutschlandkarte#########################################
+
+
+sum_mean_radiation_in_year = mean_radiation_in_years[0] * 0
+for i in range(np.shape(mean_radiation_in_years)[0]):
+    sum_mean_radiation_in_year = mean_radiation_in_years[
+                                     i] + sum_mean_radiation_in_year  # aufsummierter wert der jährlich durchschnittlichen Jahren ##vertrauscht mit oben zuerst au
+
+sum_mean_radiation_in_year = sum_mean_radiation_in_year / np.shape(mean_radiation_in_years)[0]
+
+
+#####--------------------------------------------------------------########
+
+
+# Juli = np.where(np.array(Juli) == np.nan, 0, np.array(Juli))
+# print(np.delete(Juli,0,axis=0))
+
+# print(np.shape(Juli[0][:, ~np.isnan(Juli[0]).any(axis=0)]))
+q = 0
+Nan_Werte = 0
+Real_Werte = 0
+True_Val = 0
+True_Val_List = []
+
+###Ermittlung der durchschnittlichen Globaleinstrahlung sollte die Datei bereits exisiteren--> springe auf else
+if not os.path.exists("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Wahre_Werte_Gemittelt_Jahren.txt"):
+
+### um die gemittelten werte berechnen zu können, müssen die NaN werte entfernt werden aus den jeweiligen Monaten
+    for i in tqdm(range(np.shape(Januar)[0])):
+        q = 0
+
+        if i>=18:
+
+            for val in Januar[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in Februar[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in Maerz[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in April[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in Mai[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in Juni[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+
+            for val in Juli[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in August[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+
+            for val in September[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+
+
+            for val in Oktober[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in November[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+            for val in Dezember[i]:
+                q = q + 1
+                for val_2 in val:
+
+                    if np.isnan(val_2):
+                        Nan_Werte = Nan_Werte + 1
+                    else:
+                        Real_Werte = Real_Werte + 1
+                        True_Val = val_2 + True_Val
+
+            if Real_Werte != 0:
+                True_Val_List.append(True_Val / Real_Werte)
+                True_Val = 0
+                Real_Werte = 0
+                Nan_Werte = 0
+
+        np.savetxt("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Wahre_Werte_Gemittelt_Jahren.txt",True_Val_List)
+
+else:
+    True_Val_List=np.loadtxt("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Wahre_Werte_Gemittelt_Jahren.txt")
+
+count=1
+
+Jan, Feb, Mar, Apr, Mai, Jun, Jul, Aug, Sep, Okt, Nov, Dez = [], [], [], [], [], [], [], [], [], [], [], []
+Mean_in_Year_not_again=[]
+Person_In_Middle=[]
+
+###Zuweisung der Daten auf die Monate
+for i in True_Val_List:####cleverer reshape gewesen so wäre die def schon fertig
+
+    if count == 1:
+        Jan.append(i)
+        Person_In_Middle.append(i)
+    if count == 2:
+        Feb.append(i)
+        Person_In_Middle.append(i)
+    if count == 3:
+        Mar.append(i)
+        Person_In_Middle.append(i)
+    if count == 4:
+        Apr.append(i)
+        Person_In_Middle.append(i)
+    if count == 5:
+        Mai.append(i)
+        Person_In_Middle.append(i)
+    if count == 6:
+        Jun.append(i)
+        Person_In_Middle.append(i)
+    if count==7:
+        Jul.append(i)
+        Person_In_Middle.append(i)
+    if count==8:
+        Aug.append(i)
+        Person_In_Middle.append(i)
+    if count == 9:
+        Sep.append(i)
+        Person_In_Middle.append(i)
+    if count == 10:
+        Okt.append(i)
+        Person_In_Middle.append(i)
+    if count == 11:
+        Nov.append(i)
+        Person_In_Middle.append(i)
+    if count==12:
+        Dez.append(i)
+        count=0
+        Person_In_Middle.append(i)
+        Mean_in_Year_not_again.append(np.mean(Person_In_Middle))
+        Person_In_Middle=[]
+    count=count+1
+
+
+
+
+
+####ermittlugn der mittleren Globaleinstrahlung ganz deutschland
+Q=np.reshape(True_Val_List,(-1,12))
+Mittel_Jahre=[np.sum(Q[i]) for i in range(np.shape(Q)[1])]
+print(np.mean(Mittel_Jahre))##1051.2735872735245 kWh/m^2

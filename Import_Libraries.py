@@ -81,3 +81,11 @@ import math
 
 from scipy import stats
 from scipy.stats import sem
+
+
+### Damit die Texte aus den Grafiken in Times New Roman mit einer Schriftgröße 12 dargelegt werden
+plt.rcParams['text.usetex'] = False
+font = FontProperties()
+font.set_name('Times New Roman')
+font.set_style('normal')
+font.set_size(12)
