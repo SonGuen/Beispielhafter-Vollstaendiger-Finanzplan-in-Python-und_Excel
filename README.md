@@ -25,8 +25,12 @@ lineare Prognose der Globaleinstrahlung zwischen 1991 bis 2021.
 
 # Datei 6:
 
-Simulation der Strom-Spannungskennlinie einer Solarzelle unter Berüecksichtigung der Temperatur. 
+Dreidimensionale Abbildung des Strompreises über die wirtschaftliche Nutzungsdauer. 
 
 # Datei 7:
+
+Simulation der Strom-Spannungskennlinie einer Solarzelle unter Berüecksichtigung der Temperatur. 
+
+# Datei 8:
 
 Funktionen für das vollständige Finanzplan sowie die Funktion für das geometrische brownsche Bewegung. 
