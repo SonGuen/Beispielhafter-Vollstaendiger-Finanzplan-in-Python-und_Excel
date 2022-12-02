@@ -1,97 +1,112 @@
 from Import_Libraries import *
 
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
-'''
-Diese Datei stellt die grafische Visualisierung der beziehungen aus dem multivariaten Fall zusammen.
-
-'''
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
-####################################################################################################################
 
 
 
+df=pd.read_json("C:/users/soner/Desktop/Vid/tmy_47.598_9.551_2005_2020.json")
+df_rel=pd.DataFrame(df["outputs"]["tmy_hourly"])
+Global_radiation=df_rel["G(h)"].sum()
+df_one=df_rel["G(h)"]/Global_radiation
 
-### Laden der Dateien
+Speicherkapazitaet=2003.2
+df_new=pd.DataFrame(data=df_rel["time(UTC)"])
+df_new=df_new.assign(Speicherkapaztiät_in_kWh=(df_one*Speicherkapazitaet))
+plt.plot(df_new["Speicherkapaztiät_in_kWh"])
+df_new["Uhrzeit_richtig"]=pd.to_datetime(df_new["time(UTC)"],format='%Y%m%d:%H%M')#%I:%M%p
+df_new["Uhrzeit_richtig"].sort_values(ascending=True)
 
-file="C:/Users/soner/Desktop/Szenario_II_1_Monte_Carlo.csv"
+df_new["Stunde"]=df_new["Uhrzeit_richtig"].dt.strftime("%H")
+df_new["Monat"]=df_new["Uhrzeit_richtig"].dt.strftime("%m")
 
-df=pd.DataFrame(np.array((pd.read_csv(file))))
+df_new
 
-df_2_Endwert=pd.DataFrame()
-df_2_Endwert["Endwert in €"]=df[20]
-
-file_degradation="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Degradation_Monte.csv"
-df_degredation=pd.read_csv(file_degradation)
-
-file_Anschaffungsauszahlung="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Anschaffungsauszahlung_Monte.csv"
-df_Anschaffungsauszahlung=pd.read_csv(file_Anschaffungsauszahlung)
-
-file_Batteriepreis="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Batteriepreis_Monte.csv"
-df_Batteriepreis=pd.read_csv(file_Batteriepreis)
-
-file_Batteriepreissenkung="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Batteriepreissenkung_Monte.csv"
-df_Batteriepreissenkung=pd.read_csv(file_Batteriepreissenkung)
-
-
-file_Fremdkapitalzinssatz="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Fremdkapitalzinssatz_Monte_Bank.csv"
-df_Fremdkapitalzinssatz=pd.read_csv(file_Fremdkapitalzinssatz)
-
-file_Habenzinssatz="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Habenzinssatz_Monte.csv"
-df_Habenzinssatz=pd.read_csv(file_Habenzinssatz)
-
-file_Laufende_Auszahlung="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Laufende_Auszahlung_Monte.csv"
-df_Laufende_Auszahlung=pd.read_csv(file_Laufende_Auszahlung)
-
-file_Sollzins_KfW="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Sollzins_KfW_Monte.csv"
-df_Sollzins_KfW=pd.read_csv(file_Sollzins_KfW)
-
-file_Strompreis_1000000="C:/Users/soner/OneDrive/04_Masterarbeit//99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Verteilung/Strompreis_1000000.csv"
-df_Strompreis_1000000=pd.read_csv(file_Strompreis_1000000)
+#Januar
+Januar=df_new[(df_new["Monat"] == "01")]
+#Februar
+Februar=df_new[(df_new["Monat"] == "02")]
+#März
+Maerz=df_new[(df_new["Monat"] == "03")]
+#April
+April=df_new[(df_new["Monat"] == "04")]
+#Mai
+Mai=df_new[(df_new["Monat"] == "05")]
+#Juni
+Juni=df_new[(df_new["Monat"] == "06")]
+#Juli
+Juli=df_new[(df_new["Monat"] == "07")]
+#August
+August=df_new[(df_new["Monat"] == "08")]
+#September
+September=df_new[(df_new["Monat"] == "09")]
+#Oktober
+Oktober=df_new[(df_new["Monat"] == "10")]
+#November
+November=df_new[(df_new["Monat"] == "11")]
+#Dezember
+Dezember=df_new[(df_new["Monat"] == "12")]
 
 
+font = FontProperties()
+font.set_name('Arial')
 
-### Zuweisen der Variablen auf eines
-df_ONE = pd.DataFrame([df_2_Endwert["Endwert in €"][0:500],
-                       df_degredation["0"][0:500],
-                       df_Anschaffungsauszahlung["0"][0:500],
-                       df_Batteriepreis["0"][0:500],
-                       df_Batteriepreissenkung["0"][0:500],
-                       df_Fremdkapitalzinssatz["0"][0:500],
-                       df_Habenzinssatz["0"][0:500],
-                       df_Laufende_Auszahlung["0"][0:500],
-                       df_Sollzins_KfW["0"][0:500]]
-                      )
+plt.figure(figsize=(124,24))
+plt.rcParams.update({'font.size': 28})
 
-df_ONE = df_ONE.reset_index()
-df_ONE = df_ONE.transpose()
-df_ONE = df_ONE.drop("index", axis=0)
+plt.subplot(261,title="Monat: Januar")
+plt.plot(Januar["Stunde"][0:24],Januar["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+plt.ylabel("Stromüberschuss in kWh")
+plt.xlabel("Zeit in Stunden")
 
-A = df_Strompreis_1000000.drop("Unnamed: 0", axis=1).transpose().mean(axis=1)[0:500]
-A = pd.DataFrame(A)[0].rename(9)
-df_ONE = pd.concat([df_ONE.reset_index(), A.reset_index()], axis=1).drop("index", axis=1)
-# df_Strompreis_1000000.drop("Unnamed: 0",axis=1).transpose().mean(axis=0)]
+plt.subplot(262,title="Monat: Februar")
+plt.plot(Februar["Stunde"][0:24],Februar["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+plt.ylabel("Stromüberschuss in kWh")
+plt.xlabel("Zeit in Stunden")
 
-dict = {0: 'Endwert in €',
-        1: 'Degradation in %',
-        2: 'Anschaffungsauszahlung in €/kWp',
-        3: 'Batteriepreis in €/kWp',
-        4: 'Senkung der Anschaffung des Batteriepreises in %',
-        5: 'Fremdkapitalzinssatz in %',
-        6: 'Habenzinssatz in %',
-        7: 'Laufende Auszahlung in €/kWp',
-        8: 'Sollzinssatz vom KfW Kredit in %',
-        9: 'Strompreis in €/kWh'}
+plt.subplot(263,title="Monat: März")
+plt.plot(Maerz["Stunde"][0:24],Maerz["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+plt.ylabel("Stromüberschuss in kWh")
+plt.xlabel("Zeit in Stunden")
 
-# call rename () method
-df_ONE.rename(columns=dict,
-              inplace=True)
-print(df_ONE.head())
+plt.subplot(264,title="Monat: April")
+plt.plot(April["Stunde"][0:24],April["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+plt.ylabel("Stromüberschuss in kWh")
+plt.xlabel("Zeit in Stunden")
 
-###plotten der Datei
-sns.pairplot(df_ONE)
-g.fig.suptitle("Beziehungen aus den einzelnen Faktoren aus dem Multivariaten Fall", y=1.08)
+
+plt.figure(figsize=(124,24))
+plt.rcParams.update({'font.size': 28})
+
+plt.subplot(271,title="Monat: Mai")
+plt.plot(Mai["Stunde"][0:24],Mai["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+
+
+plt.subplot(272,title="Monat: Juni")
+plt.plot(Juni["Stunde"][0:24],Juni["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+
+
+plt.subplot(273,title="Monat: Juli")
+plt.plot(Juli["Stunde"][0:24],Juli["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss")
+
+
+plt.subplot(274,title="Monat: August")
+plt.plot(August["Stunde"][0:24],August["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss für einen Tag im Monat")
+
+
+plt.figure(figsize=(124,24))
+plt.rcParams.update({'font.size': 28})
+
+plt.subplot(281,title="Monat: September")
+plt.plot(September["Stunde"][0:24],September["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss für einen Tag im Monat")
+
+plt.subplot(282,title="Monat: Oktober")
+plt.plot(Oktober["Stunde"][0:24],Oktober["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss für einen Tag im Monat")
+
+
+plt.subplot(283,title="Monat: November")
+plt.plot(November["Stunde"][0:24],November["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss für einen Tag im Monat")
+
+plt.subplot(284,title="Monat: Dezember")
+plt.plot(Dezember["Stunde"][0:24],Dezember["Speicherkapaztiät_in_kWh"][0:24],label="Stromüberschuss für einen Tag im Monat")
+
+plt.rcParams["legend.loc"]="lower right"
+plt.legend()
