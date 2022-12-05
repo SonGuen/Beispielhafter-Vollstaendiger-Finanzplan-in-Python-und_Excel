@@ -15,8 +15,8 @@ Da die unten aufgeführten Befehle ausschließlich der grafischen Visualisierung
 ####################################################################################################################
 
 
-df_Strompreis_up = pd.read_excel("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Variation_Strompreis.xlsx",sheet_name="Tabelle2")
-df_Strompreis_down = pd.read_excel("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Variation_Strompreis.xlsx",sheet_name="Tabelle3")
+df_Strompreis_up = pd.read_excel("Variation_Strompreis.xlsx",sheet_name="Tabelle2")
+df_Strompreis_down = pd.read_excel("Variation_Strompreis.xlsx",sheet_name="Tabelle3")
 #laden des Strompreises
 
 
