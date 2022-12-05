@@ -11,10 +11,10 @@ die Kommentare zur Nachvollziehbarkeit des Codes sind mit -###- hinterlegt
 
 
 df_Verlauf = pd.read_excel(
-    "C:/Users/soner/OneDrive/04_Masterarbeit/04_Praktische_Ausführungen/99_Standardlastprofil/Standardlastprofil.xlsx",
+    "Standardlastprofil.xlsx",
     sheet_name="Tabelle2")
 df_Wichtig = pd.read_excel(
-    "C:/Users/soner/OneDrive/04_Masterarbeit/04_Praktische_Ausführungen/99_Standardlastprofil/Standardlastprofil.xlsx",
+    "Standardlastprofil.xlsx",
     sheet_name=2)
 ### Laden der Standardlastprofile
 
@@ -343,12 +343,12 @@ for i in range(len(Jahresbetrachtung)):
 
 ###Füge die Stromverbrauche auf die Jahresbetrachtung und speichere dies ab und fasse beim ersten diese in stündlicher Taktung
 Jahresbetrachtung.assign(Verhältnis_kWh=lambda x: (x["kWh"]/sum(Jahresbetrachtung["kWh"]))*Stromprofil_Jahr_kWh)\
-.resample("H",on="Zeit")["Verhältnis_kWh"].sum().to_excel("C:/Users/soner/Desktop/Auswertung_Lastverlauf_stündlich.xlsx",
+.resample("H",on="Zeit")["Verhältnis_kWh"].sum().to_excel("Auswertung_Lastverlauf_stündlich.xlsx",
                                          sheet_name='Jahresbetrachtung',index=False,
                                          header=["Verhältnis_kWh_Stündlich"])
 
 ###abspeichern in 15 minütiger taktung
 Jahresbetrachtung.assign(Verhältnis_kWh=lambda x: (x["kWh"]/sum(Jahresbetrachtung["kWh"]))*Stromprofil_Jahr_kWh)\
-.to_excel("C:/Users/soner/Desktop/Auswertung_Lastprofil.xlsx",
+.to_excel("Auswertung_Lastprofil.xlsx",
                                          sheet_name='Jahresbetrachtung',index=False,
                                          header=["Zeit","kWh","Verhältnis_kWh"])
