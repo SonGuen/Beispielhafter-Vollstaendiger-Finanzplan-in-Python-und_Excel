@@ -1,3 +1,5 @@
+Bei Ausführung des VOFIS ist die Jupyter-Oberfläche verwendet worden.
+
 # Beispielhafter-Vollstaendiger-Finanzplan-in-Python
 
 # Brechen des Stromüberschusses auf Tagen ... :
