@@ -23,7 +23,7 @@ if __name__ == "__main__":
     ####################################################################################################################
     ####################################################################################################################
     df = pd.read_excel(
-        "C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Energiepreis/preis_test.xlsx")
+        "preis_test.xlsx")
 
     dt = 1 / 2
 
@@ -89,79 +89,79 @@ if __name__ == "__main__":
             tmp_b = Strompreis_Ranges_Test.loc[i, 1]
 
             RANGE_STRP_PREIS.append(np.linspace(tmp_a, tmp_b, 20))
-        #pd.DataFrame(Strompreis_Ranges_Test).to_excel("C:/Users/soner/Desktop/RANGE_STRP_PREIS.xlsx")
+        #pd.DataFrame(Strompreis_Ranges_Test).to_excel("RANGE_STRP_PREIS.xlsx")
 
 
 
     Degredation_Range = np.linspace(0.004, 0.007, 100)
     Degredation_Range = list(Degredation_Range)
-    #pd.DataFrame(Degredation_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Degredation_Range).to_excel( \
     #                                         "Degredation_Range.xlsx",
     #                                         index=False)  ### zum abspeichern, der resultierenden Parameter
 
     Fremdkapitalzins_Range = np.linspace(0.0799, 0.1399, 100)
     Fremdkapitalzins_Range = list(Fremdkapitalzins_Range)
-    #pd.DataFrame(Fremdkapitalzins_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Fremdkapitalzins_Range).to_excel(\
     #                                              "Fremdkapitalzins_Range.xlsx",
     #                                              index=False)  ### zum abspeichern, der resultierenden Parameter
 
     Inflation_Range = np.linspace(0.0, 0.1, 100)
     Inflation_Range = list(Inflation_Range)
-    #pd.DataFrame(Inflation_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Inflation_Range).to_excel( \
     #                                       "Inflation_Range.xlsx",
     #                                       index=False)  ### zum abspeichern, der resultierenden Parameter
 
     Sollzins_KfW_Range = np.linspace(0.0465, 0.1143, 100)
     Sollzins_KfW_Range = list(Sollzins_KfW_Range)
-    #pd.DataFrame(Sollzins_KfW_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Sollzins_KfW_Range).to_excel( \
     #                                          "Sollzins_KfW_Range.xlsx",
     #                                          index=False)  ### zum abspeichern, der resultierenden Parameter
 
     # Einspeisevergütung_Range=np.linspace(0.0,0.0818365444375388,100)
     # Einspeisevergütung_Range=list(Einspeisevergütung_Range)
-    # pd.DataFrame(Einspeisevergütung_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/"\
+    # pd.DataFrame(Einspeisevergütung_Range).to_excel(\
     #                                                         "Einspeisevergütung_Range.xlsx",index=False) #zum abspeichern, der resultierenden Parameter
 
     Batteriepreisenkung_Range = np.linspace(0.4, 0.5, 100)
     #Batteriepreisenkung_Range = list(Batteriepreisenkung_Range)
-    #pd.DataFrame(Batteriepreisenkung_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Batteriepreisenkung_Range).to_excel(\
     #                                                "Batteriepreisenkung_Range.xlsx",
     #                                                index=False)  # zum abspeichern, der resultierenden Parameter
 
     Auszahlung_aus_der_Szenario_Range = np.linspace(1201.12 * (1 - 0.07), 1201.12 * (1 + 0.07), 100)
     #Auszahlung_aus_der_Szenario_Range = list(Auszahlung_aus_der_Szenario_Range)
-    #pd.DataFrame(Auszahlung_aus_der_Szenario_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Auszahlung_aus_der_Szenario_Range).to_excel(\
     #                                                         "Auszahlung_aus_der_Szenario_Range.xlsx",
     #                                                         index=False)  # zum abspeichern, der resultierenden
     # Parameter
 
     Batteriepreis_Range = np.linspace(1200, 2200, 100)
     Batteriepreis_Range = list(Batteriepreis_Range)
-    #pd.DataFrame(Batteriepreis_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Batteriepreis_Range).to_excel(\
     #                                           "Batteriepreis_Range.xlsx",
     #                                           index=False)  # zum abspeichern, der resultierenden Parameter
 
     Anschaffung_Szenario_II = 1201.12408
     Auszahlung_BoS_Versicherung_Wartung_Range = np.linspace(Anschaffung_Szenario_II * 0.015, 30.1, 100)
     Auszahlung_BoS_Versicherung_Wartung_Range = list(Auszahlung_BoS_Versicherung_Wartung_Range)
-    #pd.DataFrame(Auszahlung_BoS_Versicherung_Wartung_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Auszahlung_BoS_Versicherung_Wartung_Range).to_excel( \
     #                                                                 "Auszahlung_BoS_Versicherung_Wartung_Range.xlsx",
     #                                                                 index=False)  # zum abspeichern, der resultierenden Parameter
 
     Habenzins_Range = np.linspace(0, 0.0237, 100)
     Habenzins_Range = list(Habenzins_Range)
-    #pd.DataFrame(Habenzins_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Habenzins_Range).to_excel(\
     #                                       "Habenzins_Range.xlsx",
      #                                      index=False)  # zum abspeichern, der resultierenden Parameter
 
     Strompreis_Range = np.linspace(min_Quantil_Strompreis, max_Quantil_Strompreis, 100)
     #Strompreis_Range = list(Strompreis_Range)
 
-    #pd.DataFrame(Strompreis_Range).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/" \
+    #pd.DataFrame(Strompreis_Range).to_excel(\
     #                                        "Strompreis_Range.xlsx",
     #                                        index=False)  # zum abspeichern, der resultierenden Parameter
 
-    # pd.DataFrame(Strompreis_upper).to_excel("C:/Users/soner/Desktop/Univariate_Sensitivität/"\
+    # pd.DataFrame(Strompreis_upper).to_excel(\
     #                                                        "Strompreis_upper.xlsx",index=False) #zum abspeichern, der resultierenden Parameter
 
 
@@ -242,7 +242,7 @@ if __name__ == "__main__":
 
         Fremdkapitalzins_KfW = 0.0538  # KfW Zins
         # Fremdkapitalzins_KfW=Sollzins_KfW_Range[i]
-        path="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Energiepreis/Mappe1.xlsx"
+        path="Mappe1.xlsx"
         Strompreis=list(((np.array(pd.read_excel(path,header=None)).reshape(-1))))
 
         ######für Strompreis kommentiert dann werden Strompreis_upper und Strompreis_lower auf den Strompreis verwiesen
@@ -371,7 +371,7 @@ if __name__ == "__main__":
     # -------------------------------------
 
     df = pd.read_excel(
-        "C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Energiepreis/preis_test.xlsx")
+        "preis_test.xlsx")
 
     dt = 1 / 2
 
@@ -401,43 +401,43 @@ if __name__ == "__main__":
     Q_T.drop(Q_T.index[[0, 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 42, 43]],
              inplace=True)
 
-    #pd.DataFrame(Q_T).to_csv("C:/Users/soner/Desktop/Strompreis_1000000.csv")
+    #pd.DataFrame(Q_T).to_csv("Strompreis_1000000.csv")
     # Strompreise_Range=np.reshape([Strompreis_lower,Strompreis_upper],(-1))#wenn konstant über die Zeiträume betrachtet werden soll
 
     np.random.seed(42)
 
     Habenzinssatz_Monte = []
     for i in range(0, runs): Habenzinssatz_Monte.append(np.random.uniform(0, 0.0237, 1)[0])
-    #pd.DataFrame(Habenzinssatz_Monte).to_csv("C:/Users/soner/Desktop/Habenzinssatz_Monte.csv")
+    #pd.DataFrame(Habenzinssatz_Monte).to_csv("Habenzinssatz_Monte.csv")
 
     Fremdkapitalzinssatz_Monte_Bank = []
     for i in range(0, runs): Fremdkapitalzinssatz_Monte_Bank.append(np.random.uniform(0.0799, 0.1399, 1)[0])
-    #pd.DataFrame(Fremdkapitalzinssatz_Monte_Bank).to_csv("C:/Users/soner/Desktop/Fremdkapitalzinssatz_Monte_Bank.csv")
+    #pd.DataFrame(Fremdkapitalzinssatz_Monte_Bank).to_csv("Fremdkapitalzinssatz_Monte_Bank.csv")
     Anschaffungsauszahlung_Monte = []
     for i in range(0, runs): Anschaffungsauszahlung_Monte.append(
         np.random.uniform((1 - 0.07) * 1201.12, (1 + 0.07) * 1201.12, 1)[0])
-    #pd.DataFrame(Anschaffungsauszahlung_Monte).to_csv("C:/Users/soner/Desktop/Anschaffungsauszahlung_Monte.csv")
+    #pd.DataFrame(Anschaffungsauszahlung_Monte).to_csv("Anschaffungsauszahlung_Monte.csv")
 
     Batteriepreis_Monte = []
     for i in range(0, runs): Batteriepreis_Monte.append(np.random.uniform(1200, 2200, 1)[0])
-    #pd.DataFrame(Batteriepreis_Monte).to_csv("C:/Users/soner/Desktop/Batteriepreis_Monte.csv")
+    #pd.DataFrame(Batteriepreis_Monte).to_csv("Batteriepreis_Monte.csv")
 
     Batteriepreissenkung_Monte = []
     for i in range(0, runs): Batteriepreissenkung_Monte.append(np.random.uniform(0.4, 0.5, 1)[0])
-    #pd.DataFrame(Batteriepreissenkung_Monte).to_csv("C:/Users/soner/Desktop/Batteriepreissenkung_Monte.csv")
+    #pd.DataFrame(Batteriepreissenkung_Monte).to_csv("Batteriepreissenkung_Monte.csv")
 
     Laufende_Auszahlung_Monte = []
     for i in range(0, runs): Laufende_Auszahlung_Monte.append(np.random.uniform(1201.12 * 0.015, 30.1, 1)[0])
-    #pd.DataFrame(Laufende_Auszahlung_Monte).to_csv("C:/Users/soner/Desktop/Laufende_Auszahlung_Monte.csv")
+    #pd.DataFrame(Laufende_Auszahlung_Monte).to_csv("Laufende_Auszahlung_Monte.csv")
 
     Sollzins_KfW_Monte = []
     for i in range(0, runs): Sollzins_KfW_Monte.append(
         np.random.uniform(0.0465, 0.1143, 1)[0])  # np.random.uniform(0.0465,0.1143,runs) <--effizinetere alternative
-    #pd.DataFrame(Sollzins_KfW_Monte).to_csv("C:/Users/soner/Desktop/Sollzins_KfW_Monte.csv")
+    #pd.DataFrame(Sollzins_KfW_Monte).to_csv("Sollzins_KfW_Monte.csv")
 
     Degradation_Monte = []
     for i in range(0, runs): Degradation_Monte.append(np.random.uniform(0.004, 0.007, 1)[0])
-    #pd.DataFrame(Degradation_Monte).to_csv("C:/Users/soner/Desktop/Degradation_Monte.csv")
+    #pd.DataFrame(Degradation_Monte).to_csv("Degradation_Monte.csv")
 
     Endwert_der_Szenarien = []
     Szenariosa = 1
