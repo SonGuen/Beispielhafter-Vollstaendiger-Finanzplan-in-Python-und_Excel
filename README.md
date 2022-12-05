@@ -14,9 +14,9 @@ Daten entstammen aus BDEW sowie EuroStat.
 # Lastprofile:
 Bildet ein Standardlastprofil auf Basis einer jährlichen Stromverbrauch und dem Verlauf einer typischen Lastprofiles einer Bäckerei.
 
-# MAIN_ECONOMY_Analysis:
+# Sensitivitätsanalyse:
 
-Beispielhafte Berechnung eines Endwertes mithilfe des Vollständigen Finanzplanes
+Beispielhafte Berechnung eines Endwertes mithilfe des Vollständigen Finanzplanes mit der Sensitivitätsanalyse.
 
 # Plot_Germany_Maps:
 
