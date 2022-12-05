@@ -45,7 +45,11 @@ Simulation der Strom-Spannungskennlinie einer Solarzelle unter Berüecksichtigun
 Funktionen für das vollständige Finanzplan sowie die Funktion für das geometrische brownsche Bewegung. 
 
 Die grafische Visualisierung des geometrisch brownschen Bewegung sieht dabei wie folgt aus:
+
+Betrachtung von t=1/2:
 ![Geometrisch_Bronwsche_Bewegung_dt_1_durch_2](https://user-images.githubusercontent.com/87901707/205654484-783dd596-732c-4a73-a190-834c383b7147.png)
+
+Betrachtung von t=1:
 ![Geometrisch_Bronwsche_Bewegung_dt_1](https://user-images.githubusercontent.com/87901707/205654488-b1d64737-b6d4-49b7-90b4-f1302f3183bb.png)
 
 
