@@ -2,15 +2,15 @@ from Import_Libraries import *
 #####-----------------------------Das Laden der Daten und Parameter für die grafische Visualisierung Anfang----------------------------------#######
 
 
-path_1="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/99_Sonstige_Rohdaten/"
-path = "C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/99_Sonstige_Rohdaten/Global_Radiation_Germany_Monthly_Rohdaten/"
-Liste ="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/99_Sonstige_Rohdaten/Global_Radiation_Germany_Monthly_Rohdaten/"
+path_1="/99_Sonstige_Rohdaten/"
+path = "/99_Sonstige_Rohdaten/Global_Radiation_Germany_Monthly_Rohdaten/"
+Liste ="/99_Sonstige_Rohdaten/Global_Radiation_Germany_Monthly_Rohdaten/"
 
 folder_file = list()
 
 
 ###abfrage sollte die Datei nicht existieren dann werden die Rohdaten von DWD zusammengefasst
-if not os.path.exists("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/global_radiation_years.txt"):
+if not os.path.exists("/DWD_Deutschlandkarte/00_Auswertung/global_radiation_years.txt"):
 
     ###Liste die Dokumentnamen aus dem Ordner laufen und weise die auf einen Variablen zu
     for filename in os.listdir(path):
@@ -204,44 +204,44 @@ else:
     top = header['YLLCORNER'] + header['NROWS'] * header['CELLSIZE']
     map_extent = (left, right, bottom, top)
 
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/global_radiation_years.txt", 'rb')
+file = open("/00_Auswertung/global_radiation_years.txt", 'rb')
 years_global_rad = pickle.load(file)
 file.close()
 
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Januar_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Januar_30_Jahre.txt", 'rb')
 Januar = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Feb_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Feb_30_Jahre.txt", 'rb')
 Februar = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/März_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/März_30_Jahre.txt", 'rb')
 Maerz = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/April_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/April_30_Jahre.txt", 'rb')
 April = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Mai_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Mai_30_Jahre.txt", 'rb')
 Mai = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Juni_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Juni_30_Jahre.txt", 'rb')
 Juni = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Juli_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Juli_30_Jahre.txt", 'rb')
 Juli = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/August_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/August_30_Jahre.txt", 'rb')
 August = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/September_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/September_30_Jahre.txt", 'rb')
 September = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Oktober_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Oktober_30_Jahre.txt", 'rb')
 Oktober = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/November_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/November_30_Jahre.txt", 'rb')
 November = pickle.load(file)
 file.close()
-file = open("C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/01_Technische_Auswertung/02_Technische_Auswertung/DWD_Deutschlandkarte/00_Auswertung/Dezember_30_Jahre.txt", 'rb')
+file = open("/00_Auswertung/Dezember_30_Jahre.txt", 'rb')
 Dezember = pickle.load(file)
 file.close()
 #####-----------------------------Das Laden der Daten und Parameter für die grafische Visualisierung Ende----------------------------------#######
