@@ -18,7 +18,7 @@ from VOFI import Monte_Carlo_GBM as Monte_Carlo_GBM
 
 
 ###lese die Daten des Strompreises
-df = pd.read_excel("./99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Energiepreis/preis_test.xlsx")
+df = pd.read_excel("preis_test.xlsx")
 
 dt = 1 / 2
 ###Bestimme den diskreten Zeitschritt
@@ -122,7 +122,7 @@ plt.show()
 
 
 
-df = pd.read_excel("./99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Energiepreis/preis_test - Kopie.xlsx")
+df = pd.read_excel("preis_test - Kopie.xlsx")
 
 dt = 1
 
