@@ -3,7 +3,7 @@ from Import_Libraries import *
 
 
 
-df=pd.read_json("C:/users/soner/Desktop/Vid/tmy_47.598_9.551_2005_2020.json")
+df=pd.read_json("tmy_47.598_9.551_2005_2020.json")
 df_rel=pd.DataFrame(df["outputs"]["tmy_hourly"])
 Global_radiation=df_rel["G(h)"].sum()
 df_one=df_rel["G(h)"]/Global_radiation
