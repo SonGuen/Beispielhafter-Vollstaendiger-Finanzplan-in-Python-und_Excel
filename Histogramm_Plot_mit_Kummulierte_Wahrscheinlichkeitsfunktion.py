@@ -25,8 +25,7 @@ def compute_histogram_bins(data, desired_bin_size):###Funktion für die erstellu
     return bins
 
 
-file="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Szenario_II_2_Monte_Carlo.csv"
-file="C:/Users/soner/Desktop/Szenario_II_2_Monte_Carlo.csv"
+file="Szenario_II_2_Monte_Carlo.csv"
 
 df=pd.DataFrame(np.array((pd.read_csv(file))))
 
@@ -67,8 +66,8 @@ plt.show()
 
 
 #################################--------------------------------------------------------------------------###############
-file="C:/Users/soner/OneDrive/04_Masterarbeit/99_Abgabe_Masterarbeit_Soner_Günaydin/00_Wirtschaftliche_Auswertung/Szenario_II_1_Monte_Carlo.csv"
-file="C:/Users/soner/Desktop/Szenario_II_1_Monte_Carlo.csv"
+
+file="Szenario_II_1_Monte_Carlo.csv"
 
 
 df=pd.DataFrame(np.array((pd.read_csv(file))))
