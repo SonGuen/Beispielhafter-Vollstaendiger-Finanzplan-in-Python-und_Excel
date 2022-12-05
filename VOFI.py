@@ -379,7 +379,7 @@ class printering():
              KfW_Kredit_Ende,
              Endwert])
         df[0].rename("Periode t", inplace=True)
-        with pd.ExcelWriter("C:/Users/soner/Desktop/" + save_name + str(counter) + "_.xlsx",
+        with pd.ExcelWriter( + save_name + str(counter) + "_.xlsx",
                             engine='openpyxl') as writer:
             df.to_excel(writer, index=False)
             df_2.to_excel(writer, index=False, startcol=1)
