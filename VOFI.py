@@ -8,8 +8,7 @@ from Import_Libraries import *
 In dieser Datei werden die einzelnen Funktionen aufgeführt die entwickelt worden sind. Im 
 speziellen handelt es sich um das VOFI sowie dem geometrisch brownschen Bewegung.
 Zusätzlich wird ein Rundungsbefehl "round_down" aufgeführt für die Gewerbesteuer aufgeführt. (Line  ca .286) 
-Auf die einzelnen Befehle wird keine Beschreibung aufgeführt, das dies dem Logik vom EXCEL Dokument "VOFI (version 1).xlsm" entspricht,
-bzw. den Flussdiagrammen bzw. Ablaufdiagrammen von  
+Diese entspricht den den Flussdiagrammen bzw. Ablaufdiagrammen von  
 (Grob (2006), S. 121 (ISBN 978-3-8006-3276-3)), 
 (Trost/ Fox (2017)), Müller (2019) S. 384, (DOI: 10.1515/9783110517163-020),  
 (Grob (2006), S. 351 ff. (ISBN: 978-3-8006-3276-3)),
@@ -20,7 +19,7 @@ bzw. den Flussdiagrammen bzw. Ablaufdiagrammen von
 ####################################################################################################################
 ####################################################################################################################
 
-
+#Ermittlung des Ein- bzw. Auszahlungsüberschüsse
 def EZUE(EZÜ,
          Umsatzsteuer_auf_Eigenverbrauch,
          Auszahlung_BoS_Versicherung_Wartung,
@@ -46,6 +45,8 @@ def EZUE(EZÜ,
                Batteriepreis_berechnung + Wechselrichterpreis_berechnung)
 
 
+         
+# Init 
 def Anschaffungsauszahlung(Szenario, Auszahlung_aus_der_Szenario, Szenario_Batterie, Batterie):
     Auszahlung = []
     KfW_Kredit_Ende = []
@@ -93,6 +94,8 @@ def Bestandssaldo(KfW_Kredit_Ende,
     Endwert.append(KfW_Kredit_Ende[t] + Festgeldkonto[t] + Kontokorrentkredit[t])
 
 
+         
+### Berechnung der Ein- Auszahlungen
 def Nebenrechnung_Strom(Ersparnis_durch_Eigenverbrauch, Netzeinspeisung_in_kWh, Stromabnahme_vom_Netz,
                         Ersparnis_Eigenverbrauch_in_Euro,
                         EEG_Foerderung_Gesamt,
@@ -130,6 +133,7 @@ def Nebenrechnung_Strom(Ersparnis_durch_Eigenverbrauch, Netzeinspeisung_in_kWh, 
            Ersparnis_Eigenverbrauch_in_Euro, EEG_Foerderung_Gesamt
 
 
+#Berechnung des Abschreibung mit Sonderabschreibung nach §7 Gewstg
 def AFA(Auszahlung, Nutzungsdauer):
     Sonder_AfA_0_2 = 0.2
     Laufzeit_Sonder_AfA = 5
@@ -149,7 +153,7 @@ def AFA(Auszahlung, Nutzungsdauer):
 
     return AfA, Sonder_AfA
 
-
+##Berechnung des Zinssatzes vom KfW Kredit
 def Kredit(Aufnahme_KfW, Fremdkapitalzins_KfW, Tilgungsbeginn, Tilgungjahr, Typ, Auszahlung, Nutzungsdauer):
     Sollzins_KfW = []
     Tilgung_KfW = []
@@ -182,6 +186,7 @@ def Kredit(Aufnahme_KfW, Fremdkapitalzins_KfW, Tilgungsbeginn, Tilgungjahr, Typ,
     return Sollzins_KfW, Tilgung_KfW, Restschuld
 
 
+##Körperschaftsteuer mit Soli sowie Gewerbesteuer mit Hebesatz; in dieser Funktion wird auch der Sollzins vom KfW sowie der Fremdkapitalzins und Habenzinssatz ermittelt
 def Ertragssteuer(Auszahlung, Aufnahme,
                   AfA, Sonder_AfA,
                   Sollzins_Kredit, Sollzins_KfW, Habenszins, Haben,
@@ -219,6 +224,9 @@ def Ertragssteuer(Auszahlung, Aufnahme,
     Steuer.append(-(Gewerbebetrag + Körperschatbetrag))
 
 
+         
+ 
+#Bankguthaben die Überschussrechnung
 def Geldanlage(Anlage, EZÜ,
                Steuer,
                Sollzins_KfW, Sollzins_Kredit,
@@ -258,6 +266,7 @@ def Geldanlage(Anlage, EZÜ,
         Auflösung.append(0)
 
 
+#Fremdkapitalrechnung Unterschussrechnung
 def Kontokorrent(EZÜ, Steuer,
                  Tilgung_KfW, Sollzins_KfW,
                  Sollzins_Kredit, Tilgung_Kredit,
@@ -294,6 +303,8 @@ def round_down(n, decimals=0):###Zum Abrunden der Gewerbesteuer
     return math.floor(n * multiplier) / multiplier
 
 
+
+#Geometrisch Brownsche Bewegung
 def Monte_Carlo_GBM(Zeitraum, S_T, dt, P_0, Durchschnittliche_Wachstumsrate, runs):
     np.random.seed(42)
 
@@ -309,7 +320,7 @@ def Monte_Carlo_GBM(Zeitraum, S_T, dt, P_0, Durchschnittliche_Wachstumsrate, run
 
     return S_T
 
-
+#Ausrucken des VOFI's in ein Excel sheet
 class printering():
     @staticmethod
     def printing_VOFI(save_name,
