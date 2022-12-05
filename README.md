@@ -38,7 +38,14 @@ Dreidimensionale Abbildung des Strompreises über die wirtschaftliche Nutzungsda
 # Solar_Cells:
 
 Simulation der Strom-Spannungskennlinie einer Solarzelle unter Berüecksichtigung der Temperatur. 
+![Solarzelle_Verhalten](https://user-images.githubusercontent.com/87901707/205653920-fbb9dc9f-c7a1-4eb0-b1b8-a444f5d5644a.png)
 
 # VOFI:
 
 Funktionen für das vollständige Finanzplan sowie die Funktion für das geometrische brownsche Bewegung. 
+
+Die grafische Visualisierung des geometrisch brownschen Bewegung sieht dabei wie folgt aus:
+![Geometrisch_Bronwsche_Bewegung_dt_1_durch_2](https://user-images.githubusercontent.com/87901707/205654484-783dd596-732c-4a73-a190-834c383b7147.png)
+![Geometrisch_Bronwsche_Bewegung_dt_1](https://user-images.githubusercontent.com/87901707/205654488-b1d64737-b6d4-49b7-90b4-f1302f3183bb.png)
+
+
