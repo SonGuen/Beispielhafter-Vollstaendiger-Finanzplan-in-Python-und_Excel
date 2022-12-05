@@ -5,8 +5,6 @@ from Import_Libraries import *
 ####################################################################################################################
 ####################################################################################################################
 '''
-Achtung diese 3dimensionale Betrachtung des Strompreises über die Nutzungsdauer funktioniert ausschließliich über 
-Jupiter aufgrund des Befehls -->% matplotlib notebook für die Interaktion der Grafik auf der Oberfläche
 Diese Datei stellt die 3 dimensionale Abbildung des Strompreises mit dem Endwert sowie der Nutzungsdauer dar.
 Da die unten aufgeführten Befehle ausschließlich der grafischen Visualisierung dienen wird nicht vertieft darauf eingegangen. 
 
